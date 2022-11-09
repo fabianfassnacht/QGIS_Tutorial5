@@ -10,13 +10,15 @@ In this tutorial we will get to know the most important basics for creating and 
 
 To start,
 
-**we load the raster dataset “S2_Neapel_sm2.tif” located in the “Datasets/S2” folder. Next, adapt the visualization settings to have a balanced view of all classes by using the channels R=3, G=2, B=1 and loading new max / min values using the “Style”-tab in the properties window.**
+**we load the raster dataset “S2_Neapel_sm2.tif” as already learned in previous tutorials. Next, adapt the visualization settings to have a balanced view of all classes by using the channels R=3, G=2, B=1 and loading new max / min values using the “Symbology”-tab in the properties window.**
 
 As next step, we will create an empty shapefile by
 
 **selecting the menu “Layer” then “Create Layer” and “New Shapefile Layer” as indicated in Figure 1**
 
 ![Figure 1: Creating a new shapefile.](Fig1_Tut5.png)
+
+**Figure 1: Creating a new shapefile layer**
 
 This will open a new window in which you can define the type of Shapefile you want to create. There are three options: 1. Point 2. Line and 3. Polygon – see also area marked with “1” in Figure 2. Furthermore, it is necessary to define a coordinate reference system (CRS) - marked with “2” in Figure 2. We will now do this by
 
