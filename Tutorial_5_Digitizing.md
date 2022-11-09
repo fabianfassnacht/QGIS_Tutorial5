@@ -116,13 +116,13 @@ In this section, we will for the first time use a tool of QGIS that is not inclu
 
 **Figure 14: The processing toolbox.**
 
-Finding the correct tool that is able to conduct the action I want to perform on my data is not always easy. The best option is to directly know the name of the tool. This is similar to learning vocabulary in a foreign language. In case you know the name of the tool that you want to use, you can simply type in its name in the field marked with “1” in Figure 15. Alternatively, you can browse through the available tools by opening the menus in the “Processing Toolbox window”. Typically, the tools are sorted according to their input data type, that is there are separate tools for raster datasets and vector datasets.
+Finding the correct tool that is able to conduct the action we want to perform on our data is not always easy. The best option is to directly know the name of the tool. This is similar to learning vocabulary in a foreign language. In case you know the name of the tool that you want to use, you can simply type in its name in the field marked with “1” in Figure 15. Alternatively, you can browse through the available tools by opening the menus in the “Processing Toolbox window”. Typically, the tools are sorted according to their input data type, that is there are separate tools for raster datasets and vector datasets.
 
 ![Figure 15: The processing toolbox.](Fig15_Tut5.png)
 
 **Figure 15: The processing toolbox.**
 
-You can find further tools including the most commonly applied ones in the main menu of QGIS where you can find the two menu sections called “Vector” and “ Raster” which contain plenty of options to process each datatype. It is highly recommended to also try out some of these tools and find out yourself what they are doing. In most cases there is also some further information given once the tool is started.
+You can find further tools including the most commonly applied ones in the main menu of QGIS where you can find the two menu sections called “Vector” and “ Raster” which contain plenty of options to process each datatype. It is highly recommended to also try out some of these tools and find out yourself what they are doing. In most cases there is also some further information given once the tool is started.
 
 The best way to learn to handle a GIS is to first learn the basics (for example using these Tutorials) but then also try out a lot on your own! Don’t be shy!
 
@@ -134,7 +134,7 @@ But back to our polygon. The first analysis tool we want to apply to our newly c
 
 **Figure 16: The processing toolbox.**
 
-After re-arranging the layers in the layer window section of QGIS, the new situation should look as shown in Figure 17. You can see that the new Polygon surrounds the old Polygon with a fixed distance of 500 m. It is important to conisder that the **buffer distance** we defined in the preceding step is always in **map units**. In our case we used a UTM coordinate reference systems which is a metric system. So the defined buffer distance will be in meters. In case we would apply a buffer on a dataset projected in latitutde and longitude, the buffer distance would be in degree! So in case you experience that even with a small buffer distance the resulting buffer shapefiles become really large, it is likely that this relates to a problem of the buffer distance unit.
+After re-arranging the layers in the layer window section of QGIS, the new situation should look as shown in Figure 17. You can see that the new Polygon surrounds the old Polygon with a fixed distance of 500 m. It is important to consider that the **buffer distance** we defined in the preceding step is always in **map units**. In our case we used a UTM coordinate reference systems which is a metric system. So the defined buffer distance will be in meters. In case we would apply a buffer on a dataset projected in latitutde and longitude, the buffer distance would be in degree! So in case you experience that even with a small buffer distance the resulting buffer shapefiles become really large, it is likely that this relates to a problem of the buffer distance unit.
 
 ![Figure 17: The processing toolbox.](Fig17_Tut5.png)
 
@@ -156,13 +156,14 @@ This will open the new window displayed in Figure 19. Here we will now
 
 **Figure 19: The attribute table.**
 
-This will open another new window as seen in Figure 20. This new window represents to the “Field calculator” tool which is a powerful tool to update the attribute table of any vector layer and add new information to it. We will now use it to add a new columns to the attribute table of the Shapefile that contains the crater Polygon. As we can see in Figure 19, this Polygon currently contains only a single Polygon. We will later see other attribute tables with a lot more objects.
+This will open another new window as seen in Figure 20. This new window represents the “Field calculator” tool which is a powerful tool to update the attribute table of any vector layer and add new information to it. We will now use it to add a new columns to the attribute table of the Shapefile that contains the crater Polygon. As we can see in Figure 19, this Polygon currently contains only a single Polygon. We will later see other attribute tables with a lot more objects.
 
 To now add the area of our crater Polygon, we
 
 **select “Create a new field”, then we define an “Output field name” by typing in “area” in the field marked with “1” in Figure 20. Next, we have to define the “Output field type”. Here we click on the drop–down–menu marked with “2” and select “Decimal number (real)”. After selecting this option, the “Precision” field marked with “3” gets activated.**
 
-This field together with the field “Output field length” defines how many digits can be stored in the new columns of the attribute table. This is similar to defining the cell format in Excel. In our case we want the area to be a decimal number which means that we can also have digitis behind the comma. The original option “Whole number (integer)” can only store whole numbers like 1, 2, 3, 34, 789 etc., while a “Decimal number (real)” field is able to store decimal numbers such as 45.3 or 648.99932. The number of digits behind the comma are defined with the “Precision field” while Output field lengths defines the number of total digits (digits before and after the comma together). So in our case,
+This field together with the field “Output field length” defines how many digits can be stored in the new columns of the attribute table. This is similar to defining the cell format in Excel. In our case we want the area to be a decimal number which means that we can also have digitis behind the comma. As you remember from the thoretical lecture, the option “Whole number (integer)” can only store whole numbers like 1, 2, 3, 34, 789 etc., while a “Decimal number (real)” field is able to store decimal numbers such as 45.3 or 648.99932. The number of digits behind the comma are defined with the “Precision field” while Output field lengths defines the number of total digits (digits before and after the comma together). So in our case,
+
 **we will set the “Output field lengths” to 15 and the “Precision” to 2.**
 
 A short summary what the other “Output field types” mean is given in Table 1.
@@ -182,12 +183,13 @@ Table 1: Output field types
 **Figure 20: Opening the attribute table.**
 
 We have now defined how the output column of the attribute table that will store the “area value” of our Polygon should look like. Now we have to tell QGIS that it should calculate the area of the Polygon. To do this,
+
 **we open the menu marked with “4” in Figure 20 and then double-click the option “$area” which will then also appear in the “Expression” section on the left, which has been empty so far.**
 
-After conducting all this steps, the “Field Calculator” window should look like shown in Figure 21. If this is the case,
+After conducting all these steps, the “Field Calculator” window should look like shown in Figure 21. If this is the case,
 **click “OK” and the window will disappear.**
 
-If we now have another look at the attribute table of the “Polygon_tut5” Layer, we will see that a new column has been added to the attribute table that contains the area of the Polygon (see Figure 22). In our case the value is given in square meters as the defined UTM coordinate system is a metric system. For the Polygon created in this Tutorial the area is 249400.03 square meters. This value is likely to differ in your case, eventhough they should be quite similar.
+If we now have another look at the attribute table of the “Polygon_tut5” Layer, we will see that a new column has been added to the attribute table that contains the area of the Polygon (see Figure 22). In our case the value is given in square meters as the defined UTM coordinate system is a metric system. For the Polygon created in this Tutorial the area is 249400.03 square meters. This value is likely to differ in your case, eventhough it should be similar.
 
 ![Figure 21: Opening the attribute table.](Fig21_Tut5.png)
 
@@ -199,7 +201,7 @@ If we now have another look at the attribute table of the “Polygon_tut5” Lay
 
 As a last step for this section, we will transform the area value given in square–meters to square kilometers. Do this we will again use the field calculator tool:
 
-**Open the attribute table of “Polygon_tut5” Layer, then click the “Field calculator” button. Define a new field called “area km”, select “Decimal number (real)” as “Output field type” and set the “Output field length“ to 15 and “Precision” to 5.**
+**Open the attribute table of “Polygon_tut5” Layer, then click the “Field calculator” button. Define a new field called “area_km”, select “Decimal number (real)” as “Output field type” and set the “Output field length“ to 15 and “Precision” to 5.**
 
 ![Figure 23: Field calculator.](Fig23_Tut5.png)
 
@@ -216,6 +218,7 @@ This will add another column to the attribute table that contains the area of th
 **Figure 24: Another column has been added to the attribute table.**
 
 ## 5 Exercise Tutorial 5
+
 In Figure 23 you can see two red circles. The first circle in the West marks the area where a river connects with the sea. The second circle in the East marks the area where the river start to become hard to identify in the satellite image.
 
 ![Figure 25: Start and end point for the Polyline to be created in the exercise.](Fig25_Tut5.png)
@@ -224,7 +227,7 @@ In Figure 23 you can see two red circles. The first circle in the West marks the
 
 To train the just learned skills you should now complete the following exercise:
 
-(1) Load the raster dataset “S2_Neapel_sm2.tif” located in the “Datasets/S2” folder. Adapt the visualization settings if you want.
+(1) Load the raster dataset “S2_Neapel_sm2.tif”. Adapt the visualization settings if you want.
 
 (2) Create a new Shapefile of type ”Line”.
 
@@ -234,7 +237,7 @@ To train the just learned skills you should now complete the following exercise:
 
 (5) Adapt the visualization of newly created spatial line object and give the line a deep blue colour and a line width of 5.
 
-(6) Zoom to the Polyline object you have created and export the current view by selecting “Project” -> “Save as Image” from the main menu of QGIS (Figure 26). This will be the proof that you have completed this Tutorial.
+(6) Zoom to the Polyline object you have created and export the current view by selecting “Import/Export” -> “Export Map to Image” from the main menu of QGIS (Figure 26). This will be the proof that you have completed this Tutorial.
 
 ![Figure 26: Save current view as image.](Fig26_Tut5.png)
 
