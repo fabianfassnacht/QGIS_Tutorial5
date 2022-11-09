@@ -18,7 +18,7 @@ As next step, we will create an empty shapefile by
 
 ![Figure 1: Creating a new shapefile.](Fig1_Tut5.png)
 
-**Figure 1: Creating a new shapefile layer**
+**Figure 1: Creating a new shapefile layer.**
 
 This will open a new window in which you can define the type of Shapefile you want to create. There are three options: 1. Point 2. Line and 3. Polygon – see also area marked with “1” in Figure 2. Furthermore, it is necessary to define a coordinate reference system (CRS) - marked with “2” in Figure 2. We will now do this by
 
@@ -26,22 +26,32 @@ This will open a new window in which you can define the type of Shapefile you wa
 
 ![Figure 2: Selecting the correct settings for a Shapefile.](Fig2_Tut5.png)
 
+**Figure 2: Selecting the correct settings for a Shapefile.**
+
 However, we first have to decide what is the correct coordinate reference system. As you can see form Figure 3 there are very many coordinate reference systems (CRS) to choose from. In our case, we will simply select the coordinate reference system of the already loaded satellite image. This is often an easy solution if no further information about coordinate reference systems is available. 
 In our case, we can find out the coordinate reference system of the satellite image by having a look at the lower right corner of the QGIS graphical user interface as marked in Figure 4. At this position you will always see the current CRS of the QGIS project. It is normally defined by the first datasets that gets loaded into a project. In our case, the satellite image was loaded first, so the whole project was adapted to the CRS of the satellite image. In case several datasets are loaded, they might have differing CRS. We will investigate such a case in one of the Tutorials which are still to come.
 
 ![Figure 3: Defining the coordinate reference system.](Fig3_Tut5.png)
 
+**Figure 3: Defining the coordinate reference system.**
+
 ![Figure 4: Identify the coordinate reference system of the current QGIS project.](Fig4_Tut5.png)
+
+**Figure 4: Identify the coordinate reference system of the current QGIS project.**
 
 So how do we ensure that the CRS of our new Shapefile matches the CRS of the satellite image? In Figure 4 we can see that the CRS of the current QGIS project and hence the satellite image has the EPSG code: 32633. We will now select the same CRS in the “select CRS dialogue” in QGIS by
 
-**clicking in the “Filter” area marked with “1” in Figure 3, then we enter the digits of the EPSG code, that is “32633”. By doing this, all CRS systems except for a single one will disappear (see Figure 5). As you will learn in the theoretical lectures, each EPSG code is unique! So we will now select the coordinate system “WGS 84 / UTM zone 33N” and confirm with clicking “OK”. As final step, we will have to define a name for the shapefile and the folder where you want to store it. To do this, we click the ... button in the top right of the form next to the "File name" field and enter a filename and navigate to the folder where we want to store the new Shapefile. Name the Shapefile “Polygon_tut5.shp”, press “OK" and "OK" again in the main form to create the new Polygon Shapefile.
+**clicking in the “Filter” area marked with “1” in Figure 3, then we enter the digits of the EPSG code, that is “32633”. By doing this, all CRS systems except for a single one will disappear (see Figure 5). As you will learn in the theoretical lectures, each EPSG code is unique! So we will now select the coordinate system “WGS 84 / UTM zone 33N” and confirm with clicking “OK”. As final step, we will have to define a name for the shapefile and the folder where you want to store it. To do this, we click the ... button in the top right of the form next to the "File name" field and enter a filename and navigate to the folder where we want to store the new Shapefile. Name the Shapefile “Polygon_tut5.shp”, press “OK" and "OK" again in the main form to create the new Polygon Shapefile.**
 
 ![Figure 5: Filtering using the EPSG code.](Fig5_Tut5.png)
+
+**Figure 5: Filtering using the EPSG code.**
 
 This should lead to a new situation as depicted in Figure 6. As you can see, not too much has changed as the Polygon-Shapefile currently is still empty and contains no spatial features. We will learn how we can add new features in the next section.
 
 ![Figure 6: Situation after creating a shapefile.](Fig6_Tut5.png)
+
+**Figure 6: Situation after creating a shapefile.**
 
 ## 2 Digitalization of new spatial objects into a Shapefile layer
 In this section we will mostly work with the “Digitizing toolbar” which can be seen in Figure 7. In your case the buttons of the editing toolbar will most likely be still greyed out and only the button marked with “2” might be a active depending on which layer is currently selected in the layer window section of QGIS. So to activate the other buttons, we have to initialize the digitalization process. To do this, we
@@ -50,27 +60,37 @@ In this section we will mostly work with the “Digitizing toolbar” which can 
 
 ![Figure 7: Filtering using the EPSG code.](Fig7_Tut5.png)
 
+**Figure 7: Filtering using the EPSG code.**
+
 As next step we will digitize the crater area of the vulcano and calculate its area. To accomplish this, we
 
 **first zoom in to the vulcano area by using the zoom-in tool which we already know from the earlier tutorials. Then select the button marked with “4” in Figure 7. This button allows us to create a new spatial object - in this case a Polygon as we are editing a polygon shapefile. The symbol would differ in case we would edit a point or a line–shapefile. After selecting the button, start digitizing the circumference of the vulcano crater by navigating the mouse cursor over the edges of the crater and performing a left–click, then move the mourse cursor a bit further and perform another left–click and so on until you have surrounded the whole crater (see Figure 8). When you are happy with your polygon, perform a right–click to finish the polygon. QGIS will ask you to enter an id - you can either enter a number or just click “OK”. For the moment this option is not yet relevant.**
 
 ![Figure 8: Polygon surrounded the whole crater.](Fig8_Tut5.png)
 
-After finishing the polygon, the transparent colour of the “polygon-in-progress” will change to a solid colour as shown in (see Figure 9. In case you do not like this format of the Polygons, you can switch the colour, or add transparency using the “Style” tab in the “Properties” window as you have learned in the earlier Tutorials. Be aware that you can also adapt the transparency of only the fill-colour while keeping the colour of the Outline solid (try to find out how this works!). If you are happy with your newly ceated Polygon click the button marked with “3” in Figure 7 to save the edits you made. If you do not want to add any further objects click button marked with “2” again to stop the editing mode.
+**Figure 8: Polygon surrounded the whole crater.**
+
+After finishing the polygon, the transparent colour of the “polygon-in-progress” will change to a solid colour (see Figure 9). In case you do not like this format of the Polygons, you can switch the colour, or add transparency using the “Symbology” tab in the “Properties” window as you have learned in the earlier Tutorials. Be aware that you can also adapt the transparency of only the fill-colour while keeping the colour of the Outline solid (try to find out how this works!). If you are happy with your newly ceated Polygon click the button marked with “3” in Figure 7 to save the edits you made. If you do not want to add any further objects click button marked with “2” again to stop the editing mode.
 
 ![Figure 9: Creating a new Polygon over the crater area of the vulcano.](Fig9_Tut5.png)
 
+**Figure 9: Creating a new Polygon over the crater area of the vulcan.**
+
 In case you think that your Polygon is not accurate enough and you would like to correct some of the points between which the Polygon is spanned (this points are called “nodes”), QGIS offers a tool to adapt the shape of Polygons. This function is available when pressing the button marked with “7” in Figure 7. So let’s try this out.
 
-**First activate the editing mode as already learnt, then select the “Node” Tool (button 7) and then click on the Polygon you want to edit. In our case we only have a single Polygon. Once the Polygon has been selected, all nodes appear as rectangles and can now be rearranges / moved by putting the mouse cursor over them clicking and holding the left mouse–button and draging them to the desired position - see Figure 10**
+**First activate the editing mode as already learnt, then select the “Node” Tool (button 7) and then click on the Polygon you want to edit. In our case we only have a single Polygon. Once the Polygon has been selected, all nodes appear as rectangles and can now be rearranged / moved by putting the mouse cursor over them clicking and holding the left mouse–button and draging them to the desired position - see Figure 10**
 
 ![Figure 10: Editing Nodes of a Polygon.](Fig10_Tut5.png)
+
+**Figure 10: Editing Nodes of a Polygon.**
 
 Now you are able to create new spatial objects and adapt the shape of an existing object. Next, we will have a quick look on the other buttons illustrated in Figure 7. First we will try to create a Polygon element of a circle. To do this, we
 
 **click the button marked with “5”. Then we click somewhere in main visualization window of QGIS to set the starting point, a second time to set the ending point and a third time to set the point of maximum distance from the “baseline”. Then QGIS will create an element of a circle as illustrated in Figure 11**
 
 ![Figure 11: The newly created element of a circle Polygon.](Fig11_Tut5.png)
+
+**Figure 11: The newly created element of a circle Polygon.**
 
 In our case this new polygon does not make too much sense. So we would like to delete it again. In order to this,
 
@@ -79,19 +99,28 @@ In our case this new polygon does not make too much sense. So we would like to d
 
 ![Figure 12: Selecting the newly created element of a circle Polygon.](Fig12_Tut5.png)
 
+**Figure 12: Selecting the newly created element of a circle Polygon.**
+
 Now the polygon should disappear again. The remaining buttons are typically used less frequently, but are still very useful in some occasions. In brief, the button marked with “6” in Figure 7 allows to move complete spatial objects around after they have been selected with the “Select Feature” tool. The buttons marked with “9”, “10” and “11” offer the possibilities to “cut out”, “copy” and “paste” polygons. To find out how this works,
 
 **play around a bit with the buttons and try to create a situation which looks similar to Figure 13**
 
 ![Figure 13: Situation after copy and pasting the original polygon two times and shifting the pasted Polygons to new locations.](Fig13_Tut5.png)
+
+**Figure 13: Situation after copy and pasting the original polygon two times and shifting the pasted Polygons to new locations.**
+
 ## 3 Buffer analysis
 In this section, we will for the first time use a tool of QGIS that is not included in the standard processing tools and can only be found using the processing toolbox. Normally, the processing toolbox is already opened when opening QGIS (see box marked on the right part of Figure 14). In case it is not visible, it can be opened by selecting “Processing” and then “Toolbox” from the main menu of QGIS as also shown in Figure 14.
 
 ![Figure 14: The processing toolbox.](Fig14_Tut5.png)
 
+**Figure 14: The processing toolbox.**
+
 Finding the correct tool that is able to conduct the action I want to perform on my data is not always easy. The best option is to directly know the name of the tool. This is similar to learning vocabulary in a foreign language. In case you know the name of the tool that you want to use, you can simply type in its name in the field marked with “1” in Figure 15. Alternatively, you can browse through the available tools by opening the menus in the “Processing Toolbox window”. Typically, the tools are sorted according to their input data type, that is there are separate tools for raster datasets and vector datasets.
 
 ![Figure 15: The processing toolbox.](Fig15_Tut5.png)
+
+**Figure 15: The processing toolbox.**
 
 You can find further tools including the most commonly applied ones in the main menu of QGIS where you can find the two menu sections called “Vector” and “ Raster” which contain plenty of options to process each datatype. It is highly recommended to also try out some of these tools and find out yourself what they are doing. In most cases there is also some further information given once the tool is started.
 
@@ -103,9 +132,13 @@ But back to our polygon. The first analysis tool we want to apply to our newly c
 
 ![Figure 16: The processing toolbox.](Fig16_Tut5.png)
 
-After re-arranging the layers in the layer window section of QGIS, the new situation should look as shown in Figure 17. You can see that the new Polygon surrounds the old Polygon with a fixed distance of 500 m. It is important to conisder that the **buffer distance** we defined in the preceding step is always in **map units**. In our case we used a UTM coordinate reference systems which is a metric system. So the defined buffer distance will be in meters. In case we would apply a buffer on a dataset projected in latitutde and longitude, the buffer distance would be in degree! So in case you experience that even with a small buffer distance the resulting buffer shapefiles become really large, it is likely that this relates to a problem of the buffer distance unit.
+**Figure 16: The processing toolbox.**
+
+After re-arranging the layers in the layer window section of QGIS, the new situation should look as shown in Figure 17. You can see that the new Polygon surrounds the old Polygon with a fixed distance of 500 m. It is important to conisder that the **buffer distance** we defined in the preceding step is always in **map units**. In our case we used a UTM coordinate reference systems which is a metric system. So the defined buffer distance will be in meters. In case we would apply a buffer on a dataset projected in latitutde and longitude, the buffer distance would be in degree! So in case you experience that even with a small buffer distance the resulting buffer shapefiles become really large, it is likely that this relates to a problem of the buffer distance unit.
 
 ![Figure 17: The processing toolbox.](Fig17_Tut5.png)
+
+**Figure 17: The processing toolbox.**
 
 ## 4 Calculating the area of Polygons using the Field Calculator tool
 In this section, we will learn how to calculate the area of spatial polygon objects stored in a Shapefile. The same procedure can also be used to calculate lengths of Polylines and the x,y-coordinates of Points stored in Shapefiles. In our case we will calculate the area of the crater Polygon we have created earlier. To do this,
@@ -113,11 +146,15 @@ In this section, we will learn how to calculate the area of spatial polygon obje
 
 ![Figure 18: Opening the attribute table.](Fig18_Tut5.png)
 
+**Figure 18: Opening the attribute table.**
+
 This will open the new window displayed in Figure 19. Here we will now
 
 **click the “Open Field calculator” button marked with “1”.**
 
 ![Figure 19: The attribute table.](Fig19_Tut5.png)
+
+**Figure 19: The attribute table.**
 
 This will open another new window as seen in Figure 20. This new window represents to the “Field calculator” tool which is a powerful tool to update the attribute table of any vector layer and add new information to it. We will now use it to add a new columns to the attribute table of the Shapefile that contains the crater Polygon. As we can see in Figure 19, this Polygon currently contains only a single Polygon. We will later see other attribute tables with a lot more objects.
 
@@ -142,6 +179,8 @@ Table 1: Output field types
  
 ![Figure 20: Opening the attribute table.](Fig20_Tut5.png)
 
+**Figure 20: Opening the attribute table.**
+
 We have now defined how the output column of the attribute table that will store the “area value” of our Polygon should look like. Now we have to tell QGIS that it should calculate the area of the Polygon. To do this,
 **we open the menu marked with “4” in Figure 20 and then double-click the option “$area” which will then also appear in the “Expression” section on the left, which has been empty so far.**
 
@@ -152,13 +191,19 @@ If we now have another look at the attribute table of the “Polygon_tut5” Lay
 
 ![Figure 21: Opening the attribute table.](Fig21_Tut5.png)
 
+**Figure 21: Opening the attribute table.**
+
 ![Figure 22: Opening the attribute table.](Fig22_Tut5.png)
+
+**Figure 22: Opening the attribute table.**
 
 As a last step for this section, we will transform the area value given in square–meters to square kilometers. Do this we will again use the field calculator tool:
 
 **Open the attribute table of “Polygon_tut5” Layer, then click the “Field calculator” button. Define a new field called “area km”, select “Decimal number (real)” as “Output field type” and set the “Output field length“ to 15 and “Precision” to 5.**
 
 ![Figure 23: Field calculator.](Fig23_Tut5.png)
+
+**Figure 23: Field calculator.**
 
 All these steps should already be familiar. However, now a new aspect comes into to play. While we used the tool or command “$area” in the first application of the “Field calculator” to calculate the area, we will this time use the just calculated “area” field as input to the “Expression” section, where we will define the function to transform the values given in square meters to values in square kilometers. To achieve this:
 
@@ -167,10 +212,15 @@ All these steps should already be familiar. However, now a new aspect comes into
 This will add another column to the attribute table that contains the area of the Polygon in square kilometers as seen in Figure 24.
 
 ![Figure 24: Another column has been added to the attribute table.](Fig24_Tut5.png)
+
+**Figure 24: Another column has been added to the attribute table.**
+
 ## 5 Exercise Tutorial 5
 In Figure 23 you can see two red circles. The first circle in the West marks the area where a river connects with the sea. The second circle in the East marks the area where the river start to become hard to identify in the satellite image.
 
 ![Figure 25: Start and end point for the Polyline to be created in the exercise.](Fig25_Tut5.png)
+
+**Figure 25: Start and end point for the Polyline to be created in the exercise.**
 
 To train the just learned skills you should now complete the following exercise:
 
