@@ -1,17 +1,9 @@
 # QGIS - Tutorials 
 ## Tutorial 5 - Basic vector processing in QGIS 
 
-Fabian Fassnacht 
-
-Institute for Geography and Geoecology 
-
-KIT—Karlsruhe Institute of Technology 
-
-July 5, 2019
-
 **Abstract**
 
-After completing this tutorial you will know how to create a new shapefile and digitize new spatial objects into the shapefile. Furthermore, you will be able to conduct a buffer analysis, and add geometric information to the newly created spatial objects. Developed with QGIS version - LAS PALMAS 2.18.9
+After completing this tutorial you will know how to create a new shapefile and digitize new spatial objects into the shapefile. Furthermore, you will be able to conduct a buffer analysis, and add geometric information to the newly created spatial objects. Developed with QGIS version - Bialowieza 3.22.5
 
 ## 1 Creating a new Shapefile vector file
 In this tutorial we will get to know the most important basics for creating and processing vector Shapefiles. We will first load the already familiar satellite image as base information from which we can digitize information into a Shapefile. After creating the shapefile, we will conduct some more analysis steps with it.
