@@ -235,7 +235,7 @@ To train the just learned skills you should now complete the following exercise:
 
 (4) Calculate the length of the river segment you have digitized in meters and kilometer.
 
-(5) Adapt the visualization of newly created spatial line object and give the line a deep blue colour and a line width of 5.
+(5) Adapt the visualization of newly created spatial line object and give the line a deep blue colour and a line width of 5 pixels.
 
 (6) Zoom to the Polyline object you have created and export the current view by selecting “Import/Export” -> “Export Map to Image” from the main menu of QGIS (Figure 26). This will be the proof that you have completed this Tutorial.
 
